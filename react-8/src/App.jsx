@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import RecipeList from './RecipeList';
 import SearchForm from './SearchForm';
+import './App.css'; // Import custom CSS file for styling
+// import logo from './logo.png'; // Import your logo image
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const ID = "f8db2f80";
@@ -24,13 +26,28 @@ function App() {
       console.error('Error fetching data:', error);
     }
   }
-
   return (
     <div className="app">
-       <h1>Food Recipe Plaza 🍔</h1>
-      <SearchForm onSearch={handleSearch} />
-      <RecipeList recipes={recipes} />
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <div className="container">
+          <a className="navbar-brand" href="/">
+            {/* <img src={logo} alt="Logo" className="logo" /> */}
+            Food Recipe Plaza 🍔
+          </a>
+        </div>
+      </nav>
+      <div className="container mt-4">
+        <SearchForm onSearch={handleSearch} />
+        <RecipeList recipes={recipes} />
+      </div>
     </div>
+
+  // return (
+  //   <div className="app">
+  //      <h1>Food Recipe Plaza 🍔</h1>
+  //     <SearchForm onSearch={handleSearch} />
+  //     <RecipeList recipes={recipes} />
+  //   </div>
   );
 }
 

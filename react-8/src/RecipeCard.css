@@ -17,3 +17,11 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow on hover for depth effect */
   }
   
+
+.recipe-details button {
+  margin-right: 10px;
+}
+
+
+
+  

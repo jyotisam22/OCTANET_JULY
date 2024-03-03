@@ -1,21 +1,33 @@
 
 // RecipeCard.js
-import React from 'react';
-import './RecipeCard.css'; // Import custom CSS file for styling
+import React, { useState } from 'react';
+import IngredientsModal from './IngredientsModal';
+import './RecipeCard.css';
 
 function RecipeCard({ recipe }) {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleShowModal = () => setShowModal(true);
+  const handleCloseModal = () => setShowModal(false);
+
   return (
     <div className="recipe-card">
       <img src={recipe.image} className="recipe-image" alt={recipe.label} />
       <div className="recipe-details">
         <h5 className="recipe-title">{recipe.label}</h5>
         <ul className="recipe-ingredients">
-          {recipe.ingredients.map(ingredient => (
-            <li key={ingredient.foodId}>{ingredient.text}</li>
+          {recipe.ingredients.map((ingredient, index) => (
+            <li key={index}>{ingredient.text}</li>
           ))}
         </ul>
-        <a href={recipe.url} className="btn btn-primary" target="_blank" rel="noopener noreferrer">View Recipe</a>
+        <button className="btn btn-primary" onClick={handleShowModal}>View Ingredients</button>
+        <button className="btn btn-primary" onClick={() => window.open(recipe.url, "_blank")}>View Recipe</button>
       </div>
+      <IngredientsModal
+        ingredients={recipe.ingredients.map(ingredient => ingredient.text)}
+        show={showModal}
+        onHide={handleCloseModal}
+      />
     </div>
   );
 }
