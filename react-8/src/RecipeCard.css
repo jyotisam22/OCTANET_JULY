@@ -1,0 +1,19 @@
+/* RecipeList.css */
+.recipe-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px; /* Added padding for a nicer view */
+  }
+  /* RecipeCard.css */
+.recipe-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    transition: all 0.3s ease; /* Add transition for smooth animation */
+  }
+  
+  .recipe-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow on hover for depth effect */
+  }
+  

@@ -1,0 +1,23 @@
+/* App.css */
+.app {
+  text-align: center; /* Center align content */
+}
+
+.header {
+  display: flex;
+  align-items: center; /* Center align items vertically */
+  justify-content: center; /* Center align items horizontally */
+  padding: 20px;
+  background-color: #007bff; /* Background color */
+}
+
+.logo {
+  width: 50px; /* Adjust logo size as needed */
+  height: auto;
+  margin-right: 10px;
+}
+
+.title {
+  color: white; /* Text color */
+  margin: 0;
+}
